@@ -1,4 +1,7 @@
 ## Audi A3 8V TPMS Retrofit
+<br>
+
+![TPMS screen](/img/TPMS_screen.jpg)
 
 This project addresses the problem of the lack of a TPMS (Tire Pressure Monitoring System) ECU  fully compatible with the MIB1 multimedia system installed in Audi A3/S3 8V "pre facelift" (2013 to 2016) models. It uses an Arduino board connected to a pair of CAN Bus shields to read CAN Bus data sent from a 8S0907273 TPMS module and make the appropriate changes on the messages before they are forwarded to the car's CAN Bus, so that pressure and temperature data are correctly displayed on the MMI screen.
 
