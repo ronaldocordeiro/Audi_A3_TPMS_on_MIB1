@@ -60,3 +60,13 @@ Changes are made only on the messages with the ID 0x17330710. These are the chan
 
 The project uses an Arduino Nano board connected to two CAN Bus shieds based on the MCP2515, using MCP CAN lib by Cory J. Fowler (https://github.com/coryjfowler/MCP_CAN_lib).
 
+## Building the circuit
+
+The circuit is composed by an Arduino board connected to two MCP2515 based CANbus shields through SPI. One shield is connected to the car's Extended CANbus wiring and the other is connected to the TPMS ECU. A circuit diagram using an Arduino Nano and Ni-Ren style CANbus shields is shown on the picture below. A voltage regulator was added because some sources don't recommend to connect the Arduino Nano board directly to 12V due to limitations of its own internal regulator.
+<br>
+![Filter circuit](/img/8S0_filter_circuit.jpg)
+<br> <br> <br>
+This is how the circuit looked like with the wiring connections in place. The heading pins were removed from the CANBus shields so wires could be soldered directly to the circuit boards. The pins corresponding to the terminating resistor jumper were closed with a soldered piece of wire.
+<br>
+![Circuits and wiring](/img/Circuits_and_wiring.jpg)
+<br> <br> <br>
