@@ -70,3 +70,8 @@ This is how the circuit looked like with the wiring connections in place. The he
 <br>
 ![Circuits and wiring](/img/Circuits_and_wiring.jpg)
 <br> <br> <br>
+Tre first prototype for the converter circuit was assembled in a box with a built-in male connector on one side and a harness with a female connector (8E0971934A) on the other. Both connectors are the same type used by the TPMS module. This allows the user to easily insert or remove the converter from the connection from the car to the TPMS module without having to cut and splice any wiring. The prototype shown on the picture below has also a "bypass switch" (not included in the original circuit diagram) that connects the wiring from the extended CANbus directly to the TPMS module, making it even easier to insert or remove the converter from the circuit. The box has also an opening for a USB cable to connect to the Arduino board.
+![Converter box](/img/Converter_box.jpg)
+<br> <br> <br>
+The picture below shows the converter box in the trunk of an Audi A3, with the connections to the car's CANbus and to the TPMS module. There is also a USB cable connected.
+![Converter+TPMS module](/img/Converter+TPMS_module.jpg)
