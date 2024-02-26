@@ -21,11 +21,11 @@ If the failure of the MMI to display the TPMS screen was just caused by the lack
 
 Only four CANBUS message IDs were observed as being sent by the TPMS ECU. The message ID 0x5F9 is the only one with standard ID, and, as mentioned in the beggining of this text, contains alert flags related to faults like pressure loss, flat tires or system malfunction. If everything is OK, the message body is composed by all zeros. It's sent by the ECU at every 500ms. If for whatever reason the car doesn't receive any such messages for about 4 seconds, a "TPMS malfunction" alert is displayed on the instrument cluster.
 
-All other three message IDs are of the extended type (11 bit ID). The IDs 0x1B00000B and 0x17F0000B are sent by the ECU at regular intervals and I couldn't identify their function. Maybe they are related to some kind of control or synchronism, but the fact is that the TPMS system seems to work normally even if they are completely blocked, so I didn't perform any deeper analysis on them.
+All other three message IDs are of the extended type (29 bit ID). The IDs 0x1B00000B and 0x17F0000B are sent by the ECU at regular intervals and I couldn't identify their function. Maybe they are related to some kind of control or synchronism, but the fact is that the TPMS system seems to work normally even if they are completely blocked, so I didn't perform any deeper analysis on them.
 
 The message ID 0x17330710 seems to contain all the relevant information for the MMI. As a CAN Bus message body is only 8 byte long, the information is broken into a series of messages where the first and second bytes identify what kind of data (flags, tire pressures, status, temperatures) is contained in the remaining bytes. The message body for ID 0x17330710  is modified by the code running in the Arduino module as needed before being forwarded to the CAN Bus. All other messages from the TPMS ECU are forwarded unchanged.
 
-Tire pressure and temperature data are contained in messages that have the first byte containing the values 0x31 or 0x41 (decimal 39 or 65) and the second byte containing the following (decimal) values:
+Tire pressure and temperature data are contained in messages that have the first byte containing the values 0x31 or 0x41 (decimal 49 or 65) and the second byte containing the following (decimal) values:
 - 208 – Related to the highlight colors to be displayed under the pressure fields on MMI screen
 - 209 – Tire pressures
 - 210 – Tire temperatures
